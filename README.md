@@ -31,4 +31,4 @@ The user may enter in a whole number, or add individual numbers, by clicking on 
 * Responsive Side Images
 
 ## Contribution
-Please check out this document for questions contributing!
+Please check out [this document](https://github.com/airada/digitalroot/blob/master/Contributions.md) for questions contributing!
