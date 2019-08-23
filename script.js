@@ -48,17 +48,17 @@ class DRCalculator{
     }
 
     drcompute() {
-        let computation
         const prev = parseFloat(this.previousOperand)
+        const current = parseFloat(this.currentOperand)
         if (isNaN(prev)){
-            if (this.currentOperand%9 == 0){
+            if (current%9 == 0){
                 this.currentOperand = 9;
             }
             else {
-                this.currentOperand = this.currentOperand%9
+                this.currentOperand = current%9
             }
         } else {
-            this.compute()
+            this.currentOperand = (prev+current)%9
         }
         this.operation = undefined
         this.previousOperand = ''
