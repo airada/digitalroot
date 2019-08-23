@@ -47,22 +47,28 @@ class DRCalculator{
         this.previousOperand = ''
     }
 
-    drcompute() {
-        const prev = parseFloat(this.previousOperand)
-        const current = parseFloat(this.currentOperand)
-        if (isNaN(prev)){
-            if (current%9 == 0){
-                this.currentOperand = 9;
-            }
-            else {
-                this.currentOperand = current%9
-            }
-        } else {
-            this.currentOperand = (prev+current)%9
+    isNine(num){
+        if (num%9 == 0){
+            this.currentOperand = 9;
+        }
+        else {
+            this.currentOperand = num%9
         }
         this.operation = undefined
         this.previousOperand = ''
-        
+    }
+    drcompute() {
+        let addNum
+        const prev = parseFloat(this.previousOperand)
+        const current = parseFloat(this.currentOperand)
+        if (isNaN(prev)){
+           this.isNine(current)
+        } else if (isNaN(current)){
+            this.isNine(current)
+        } else {
+            addNum = prev+current
+            this.isNine(addNum)
+        }
     }
 
     getDisplayNumber(number) {
