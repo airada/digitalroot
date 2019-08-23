@@ -57,6 +57,7 @@ class DRCalculator{
         this.operation = undefined
         this.previousOperand = ''
     }
+
     drcompute() {
         let addNum
         const prev = parseFloat(this.previousOperand)
@@ -64,7 +65,7 @@ class DRCalculator{
         if (isNaN(prev)){
            this.isNine(current)
         } else if (isNaN(current)){
-            this.isNine(current)
+            this.isNine(prev)
         } else {
             addNum = prev+current
             this.isNine(addNum)
