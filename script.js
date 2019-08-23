@@ -49,7 +49,7 @@ class DRCalculator{
 
     isNine(num){
         if (num%9 == 0){
-            this.currentOperand = 9;
+            this.currentOperand = 9
         }
         else {
             this.currentOperand = num%9
@@ -125,3 +125,10 @@ deleteButton.addEventListener('click', button => {
     calculator.delete()
     calculator.updateDisplay()
 })
+
+/*
+*   Animated background
+*
+*
+*
+*/

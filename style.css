@@ -1,35 +1,133 @@
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family: Gotham Rounded, sans-serif;
+    font-family: "Lucida Console", sans-serif;
     font-weight: normal;
+}
+
+html,body {
+    margin: 0;
 }
 
 body{
     padding: 0;
     margin: 0;
-    background: linear-gradient(to bottom, #000000, #605052);
+    background: linear-gradient(to bottom, #000000, #711407);
+}
+
+
+.charaLeft {
+    width: 25%;
+    height: 25%;
+    left: 0;
+    bottom: 0; 
+    position:sticky;
+    padding-bottom: 0%;
+}
+
+.charaRight {
+    width: 25%;
+    height: 25%;
+    right: 0;
+    bottom: 0;
+    position:sticky;
+    padding-bottom: 0%;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    top: 0px;
+
 }
 
 .calculator-grid {
     display: grid;
     justify-content: center;
     align-content: center;
-    min-height: 100vh;
-    grid-template-columns: repeat(3, 150px);
+    min-height: 85vh;
+    grid-template-columns: repeat(3, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
 .calculator-grid > button {
+    width: 175px;
+    height: 80px;
+    background: linear-gradient(to bottom, #6e0202 0%,#ac0404 100%); /* W3C */
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    border-bottom: 4px solid #800000;
+    color: #fbfbfb;
+    font-weight: 600;
+    font-family: "Lucida Console", sans-serif;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+    font-size: 20px;
+    text-align: left;
+    text-indent: 5px;
+    box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
     cursor: pointer;
-    font-size: 2rem;
-    border: 1px solid white;
-    outline: none;
-    background-color: rgba(255, 255, 255, .75);
-}
-
-.calculator-grid > button:hover {
-    background-color: rgba(255,255,255,.9);
-}
+  
+  /* Just for presentation */  
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .calculator-grid > button:active {
+    box-shadow: 0px 2px 0px 0px rgba(0,0,0,.2);
+    top: 1px;
+  }
+  
+  .calculator-grid > button:after {
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 40px solid #711407;
+    border-bottom: 40px solid #711407;
+    border-left: 26px solid transparent;
+    border-right: 20px solid #711407;
+    position: absolute;
+    opacity: 0.6; 
+    right: 0;
+    top: 0;
+    border-radius: 0 5px 5px 0;  
+  }
+  
+  /* Button pointing left */
+  
+  .calculator-grid > button.span-two.back {
+    text-align: right;
+    padding-right: 12px;
+    box-sizing: border-box;
+  }
+  .calculator-grid > button.span-two.back:after {
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 20px solid #187dbc;
+    border-bottom: 20px solid #187dbc;
+    border-right: 16px solid transparent;
+    border-left: 20px solid #187dbc;
+    position: absolute;
+    opacity: 0.6; 
+    left: 0;
+    top: 0;
+    border-radius: 5px 0 0 5px;    
+  }
+  
+  /* Single buttons */
+  
+  .calculator-grid > button.site {
+    width: 80px;
+    text-align: center;
+    text-indent: 0;
+  }
+  .calculator-grid > button.site:after{
+    display: none;
+  }
 
 .span-two {
     grid-column: span 2;
@@ -50,9 +148,16 @@ body{
 .output .previous-operand {
     color: rgba(255,255,255, 0.75);
     font-size: 1.5rem;
+    font-weight: 600;
+    font-family: "Lucida Console", sans-serif;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.4);
 }
 
 .output .current-operand {
     color: white;
     font-size: 2.5rem;
+    font-weight: 600;
+    font-family: "Lucida Console", sans-serif;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.4);
 }
+
