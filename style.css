@@ -11,7 +11,7 @@ html,body {
 body{
     padding: 0;
     margin: 0;
-    background: linear-gradient(to bottom, #000000, #711407);
+    background: linear-gradient(to bottom, #000000 55%, #711407 90%);
 }
 
 
